@@ -1,0 +1,24 @@
+:root {
+  --white: #fff;
+
+  --gray-300: #2d2d3b;
+  --gray-500: #1e1e26;
+  --gray-600: #1a1a21;
+  --gray-700: #16161c;
+
+  --pink: #ee69ac;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  background: var(--gray-300);
+  padding: 100px 0px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+}

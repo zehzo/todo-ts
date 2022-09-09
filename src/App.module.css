@@ -1,0 +1,27 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 21% 79%;
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .wrapper aside {
+    display: none;
+  }
+}
+
+.box {
+  /* background: #faf; */
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  border-radius: 10px;
+}
