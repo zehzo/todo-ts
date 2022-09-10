@@ -1,6 +1,8 @@
-import { Button, Form, Input, Modal, Radio } from 'antd';
+import { Form, Input } from 'antd';
 import React, { useState } from 'react';
-import '../../../node_modules/antd/dist/antd.css';
+import '../../../../../node_modules/antd/dist/antd.css';
+import addButton from '../../../../assets/add_button.svg'
+import { AddButtonContainer, FormContainer, ModalContainer } from './styles';
 
 interface Task {
   title: string;
@@ -20,7 +22,7 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
 }) => {
   const [form] = Form.useForm();
   return (
-    <Modal
+    <ModalContainer
       open={open}
       title="Crie uma nova tarefa"
       okText="Adicionar"
@@ -38,7 +40,7 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
           });
       }}
     >
-      <Form
+      <FormContainer
         form={form}
         layout="vertical"
         name="form_in_modal"
@@ -57,12 +59,12 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
         >
           <Input type="textarea" />
         </Form.Item>
-      </Form>
-    </Modal>
+      </FormContainer>
+    </ModalContainer>
   );
 };
 
-const TestModal: React.FC = () => {
+const CreateTaskModal: React.FC = () => {
   const [open, setOpen] = useState(false);
 
   const onCreate = (values: any) => {
@@ -71,15 +73,14 @@ const TestModal: React.FC = () => {
   };
 
   return (
-    <div>
-      <Button
-        type="primary"
+    <AddButtonContainer>
+      <button
         onClick={() => {
-          setOpen(true);
+        setOpen(true);
         }}
       >
-        Adicionar Tarefa
-      </Button>
+        <img src={addButton} />
+      </button>
       <CollectionCreateForm
         open={open}
         onCreate={onCreate}
@@ -87,8 +88,8 @@ const TestModal: React.FC = () => {
         setOpen(false);
         }}
       />
-    </div>
+    </AddButtonContainer>
   );
 };
 
-export default TestModal;
+export default CreateTaskModal;

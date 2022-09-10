@@ -1,5 +1,7 @@
-.sidebar {
-  background: var(--gray-600);
+import styled from "styled-components";
+
+export const SidebarContainer = styled.aside`
+  background: ${props => props.theme["gray-600"]};
   padding-top: 29px;
   padding-left: 30px;
   height: 70vh;
@@ -7,44 +9,44 @@
   flex-direction: column;
   justify-content: space-between;
   border-radius: 0 0 0 10px;
-}
 
-.message {
+  footer {
+  padding-bottom: 40px;
+  display: flex;
+  align-items: center;
+  }
+`
+
+export const GreetingsContainer = styled.div`
   display: block;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-size: 22px;
-}
 
-.message img {
+  img {
   display: block;
   background: var(--gray-600);
   height: 100px;
   align-self: flex-start;
   padding-bottom: 20px;
-}
+  }
 
-.message strong {
+  strong {
   display: block;
   padding-top: 20px;
 }
+`
 
-.sidebar > footer {
-  padding-bottom: 40px;
-  display: flex;
-  align-items: center;
-}
-
-.content {
+export const ContentContainer = styled.div` 
   padding-left: 10px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   font-size: 1.125rem;
   justify-content: space-between;
-}
 
-.content span {
+  span {
   font-size: 0.875rem;
 }
+`

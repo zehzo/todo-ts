@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { Task } from '../Task/Task';
-import TestModal from '../TestModal';
+import TestModal from '../CreateTaskModal';
 
 interface Task {
   title: string;
