@@ -5,7 +5,10 @@ module.exports = {
     node: true,
     jest: true,
   },
-  extends: ['airbnb', 'airbnb-typescript'],
+  extends: [
+    'airbnb',
+    'airbnb-typescript',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -15,7 +18,11 @@ module.exports = {
     sourceType: 'module',
     project: ['tsconfig.json'],
   },
-  plugins: ['react', '@typescript-eslint', 'import'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'import',
+  ],
   ignorePatterns: [
     '*/.js',
     'node_modules/*',
@@ -38,7 +45,10 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'import/no-unresolved': [2, { caseSensitive: false }],
+    'import/no-unresolved': [
+      2, 
+      { caseSensitive: false },
+    ],
     'react/jsx-uses-react': 'off',
     'import/prefer-default-export': 'off',
     'react/prop-types': 0,

@@ -1,10 +1,10 @@
-import styles from './Header.module.css';
 import smallLogo from '../../assets/small_logo.svg';
+import { HeaderContainer } from './styles';
 
 export function Header() {
   return (
-    <header className={styles.header}>
+    <HeaderContainer>
       <img src={smallLogo}></img>
-    </header>
+    </HeaderContainer>
   );
 }

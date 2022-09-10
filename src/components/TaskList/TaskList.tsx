@@ -1,13 +1,13 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { Task } from '../Task/Task';
-import styles from './Tasks.module.css';
+import TestModal from '../TestModal';
 
 interface Task {
   title: string;
   content: string;
 }
 
-export function Tasks() {
+export function TaskList() {
   const [newTask, setNewTask] = useState('');
   const [taskList, setTaskList] = useState(['']);
 
@@ -51,6 +51,7 @@ export function Tasks() {
           );
         })}
       </div>
+      <TestModal/>
     </div>
   );
 }
