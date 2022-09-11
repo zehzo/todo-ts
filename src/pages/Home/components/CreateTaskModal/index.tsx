@@ -1,7 +1,7 @@
 import { Form, Input } from 'antd';
 import React, { useState } from 'react';
 import '../../../../../node_modules/antd/dist/antd.css';
-import addButton from '../../../../assets/add_button.svg'
+import addButton from '../../../../assets/add_button.svg';
 import { AddButtonContainer, FormContainer, ModalContainer } from './styles';
 
 interface Task {
@@ -24,38 +24,44 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
   return (
     <ModalContainer
       open={open}
-      title="Crie uma nova tarefa"
+      title="Criar tarefa"
       okText="Adicionar"
       cancelText="Cancelar"
       onCancel={onCancel}
       onOk={() => {
         form
           .validateFields()
-          .then(values => {
+          .then((values) => {
             form.resetFields();
             onCreate(values);
           })
-          .catch(info => {
+          .catch((info) => {
             console.log('Validate Failed:', info);
           });
       }}
     >
-      <FormContainer
-        form={form}
-        layout="vertical"
-        name="form_in_modal"
-      >
+      <FormContainer form={form} layout="vertical" name="form_in_modal">
         <Form.Item
           name="title"
           label="Título"
-          rules={[{ required: true, message: 'É obrigatório informar o título da tarefa!' }]}
+          rules={[
+            {
+              required: true,
+              message: 'É obrigatório informar o título da tarefa!',
+            },
+          ]}
         >
           <Input />
         </Form.Item>
-        <Form.Item 
-          name="description" 
-          label="Descrição" 
-          rules={[{ required: true, message: 'É obrigatório informar a descrição da tarefa!' }]}
+        <Form.Item
+          name="description"
+          label="Descrição"
+          rules={[
+            {
+              required: true,
+              message: 'É obrigatório informar a descrição da tarefa!',
+            },
+          ]}
         >
           <Input type="textarea" />
         </Form.Item>
@@ -76,7 +82,7 @@ const CreateTaskModal: React.FC = () => {
     <AddButtonContainer>
       <button
         onClick={() => {
-        setOpen(true);
+          setOpen(true);
         }}
       >
         <img src={addButton} />
@@ -85,7 +91,7 @@ const CreateTaskModal: React.FC = () => {
         open={open}
         onCreate={onCreate}
         onCancel={() => {
-        setOpen(false);
+          setOpen(false);
         }}
       />
     </AddButtonContainer>
