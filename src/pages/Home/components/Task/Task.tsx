@@ -1,11 +1,15 @@
+import { TaskContainer } from "./styles";
+
 interface TaskProps {
-  content: string;
+  title: string;
+  description: string;
 }
 
-export function Task({ content }: TaskProps) {
+export function Task({ title, description }: TaskProps) {
   return (
-    <>
-      <ul>{content}</ul>
-    </>
+    <TaskContainer>
+      <strong>{title}</strong>
+      <strong>{description}</strong>
+    </TaskContainer>
   );
 }

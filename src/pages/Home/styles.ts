@@ -20,5 +20,6 @@ export const MainContainer = styled.main`
   flex-direction: column;
   background-color: ${props => props.theme["gray-700"]};
   padding: 30px;
+  border-radius: 0 0 4px 0;
 `
 

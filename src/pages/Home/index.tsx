@@ -3,6 +3,8 @@ import { Sidebar } from './components/Sidebar'
 import { MainHeader } from './components/MainHeader';
 
 import { HomeContainer, MainContainer, WrapperContainer } from "./styles";
+import { TaskList } from './components/TaskList/TaskList';
+import { TasksProvider } from '../../contexts/TasksContext';
 
 export function Home(){
   return (
@@ -12,6 +14,9 @@ export function Home(){
         <Sidebar />
         <MainContainer>
           <MainHeader />
+          <TasksProvider>
+            <TaskList/>
+          </TasksProvider>
         </MainContainer>
       </WrapperContainer>
     </HomeContainer>

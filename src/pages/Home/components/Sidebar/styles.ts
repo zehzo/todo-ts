@@ -8,7 +8,7 @@ export const SidebarContainer = styled.aside`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 0 0 0 10px;
+  border-radius: 0 0 0 4px;
 
   footer {
   padding-bottom: 40px;

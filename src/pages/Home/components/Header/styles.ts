@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header`
   height: 5rem;
   padding: 0px 37px;
   border: 0.5px solid ${(props) => props.theme["gray-700"]};
-  border-radius: 10px 10px 0 0 ;
+  border-radius: 4px 4px 0 0 ;
 
   img {
   height: 32px;

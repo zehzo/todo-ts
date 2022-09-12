@@ -1,6 +1,5 @@
 import { Form, Modal } from 'antd';
 import styled from 'styled-components';
-import { defaultTheme } from '../../../../styles/themes/default';
 
 export const AddButtonContainer = styled.div`
   button {
@@ -20,7 +19,6 @@ export const ModalContainer = styled(Modal)`
     background: ${(props) => props.theme['gray-700']};
     padding: 32px 40px;
     border-radius: 5px;
-    gap: 5px;
   }
   .ant-modal-header {
     .ant-modal-title {
@@ -46,12 +44,17 @@ export const ModalContainer = styled(Modal)`
       display: none;
     }
 
+
     #form_in_modal_title {
       background: linear-gradient(0deg, #1e1e26, #1e1e26),
-        linear-gradient(249.73deg, #f29682 0%, #ee69ac 50%, #cb4bcf 100%);
+        linear-gradient(249.73deg, #f29682 0%, #ee69ac 50%,#cb4bcf 100%);
       border: none;
       border-radius: 5px;
     }
+
+    .ant-input {
+      color: white;
+    }    
 
     #form_in_modal_description {
       background: linear-gradient(0deg, #1e1e26, #1e1e26),
@@ -60,16 +63,19 @@ export const ModalContainer = styled(Modal)`
       border-radius: 5px;
     }
     .ant-form-item-explain-error {
-      color: rgba(255, 255, 255, 0.4);
-      font-size: 0.75rem;
-      padding: 0.5rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.7rem;
+      padding: 0.7rem;
     }
   }
 
   .ant-modal-footer {
+    .ant-btn + .ant-btn:not(.ant-dropdown-trigger){
+      margin-left: 0;
+    }
     border: none;
     padding: 0;
-    margin: auto;
+    margin: 0;
     display: flex;
     align-items: center;
     align-self: center;

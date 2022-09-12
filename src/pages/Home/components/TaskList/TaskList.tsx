@@ -1,57 +1,50 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
 import { Task } from '../Task/Task';
-import TestModal from '../CreateTaskModal';
-
-interface Task {
-  title: string;
-  content: string;
-}
+import { useContextSelector } from 'use-context-selector'
+import { TasksContext } from '../../../../contexts/TasksContext';
 
 export function TaskList() {
-  const [newTask, setNewTask] = useState('');
-  const [taskList, setTaskList] = useState(['']);
+  // const [taskList, setTaskList] = useState<Task[]>([]);
 
-  function handleCreateNewTask(event: FormEvent) {
-    event.preventDefault();
+  
+  // async function loadTasks(){
+  //   const response = await listTasks()
 
-    setTaskList([...taskList, newTask]);
-    setNewTask('');
-  }
+  //   setTaskList(response);
+  // }
 
-  function handleNewTaskChange(event: ChangeEvent<HTMLTextAreaElement>) {
-    setNewTask(event.target.value);
-  }
+  // useEffect(() => {
+  //   loadTasks;
+  // }, []);
+  // function handleCreateNewTask(event: FormEvent) {
+  //   event.preventDefault();
 
-  function deleteTask(taskWillBeDeleted: string) {
-    const taskListWithoutDeletedOne = taskList.filter((task) => {
-      return task !== taskWillBeDeleted;
-    });
-    setTaskList(taskListWithoutDeletedOne);
-  }
+  //   setTaskList([...taskList, newTask]);
+  //   setNewTask('');
+  // }
+
+  // function handleNewTaskChange(event: ChangeEvent<HTMLTextAreaElement>) {
+  //   setNewTask(event.target.value);
+  // }
+
+  // function deleteTask(taskWillBeDeleted: string) {
+  //   const taskListWithoutDeletedOne = taskList.filter((task) => {
+  //     return task !== taskWillBeDeleted;
+  //   });
+  //   setTaskList(taskListWithoutDeletedOne);
+  // }
+
+  // const tasks = useContextSelector(TasksContext, (context) => {
+  //   return context.tasks
+  // })
 
   return (
-    <div>
-      <header></header>
-      <form onSubmit={handleCreateNewTask}>
-        <strong>Insira a tarefa aqui: </strong>
-        <textarea
-          name="task"
-          value={newTask}
-          placeholder="Insira a sua tarefa aqui"
-          onChange={handleNewTaskChange}
-        ></textarea>
-        <button type="submit">Adicionar</button>
-      </form>
-      <div>
-        {taskList.map((task) => {
-          return (
-            <>
-              <Task key={task} content={task} />
-            </>
-          );
-        })}
-      </div>
-      <TestModal/>
-    </div>
+    <>
+      <p>Tasks</p>
+      {/* {tasks.map((task) => {
+        return (
+          <Task key={task._id} title={task.title} description={task.description}/>
+        );
+      })} */}
+    </>
   );
 }

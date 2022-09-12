@@ -14,3 +14,35 @@ export const listTasks = async(): Promise<Task[]> => {
 
   return data;
 }
+
+export const createTask = async (
+  title: string,
+  description: string,
+): Promise<Task> => {
+  const { data } = await api.post('/todos');
+
+  return data;
+}
+
+export const detailTask = async (taskId: string) => {
+  const { data } = await api.get(`/todos/:${taskId}`);
+
+  return data;
+}
+
+export const updateTask = async (
+  taskId: string,
+  taskInfo: {title: string;
+  description: string; 
+  }
+): Promise<Task> => {
+  const { data } = await api.put(`/todos/:${taskId}`, taskInfo);
+
+  return data;
+}
+
+export const deleteTask = async (taskId: string) => {
+  const { data } = await api.delete(`/todos/:${taskId}`)
+
+  return data;
+}
