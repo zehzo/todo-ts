@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useCallback, useEffect, useState } from "react"
-import api from "../api/api";
+import { createTask, deleteTask, listTasks } from "../api/tasks";
 
 interface Task {
   _id: string,
@@ -17,8 +17,9 @@ interface CreateTaskInput {
 
 interface TasksContextType {
   tasks: Task[];
-  fetchTasks: () => Promise<void>
-  // createTask: (data: CreateTaskInput) => Promise<void>
+  addTask: (data: CreateTaskInput) => void;
+  fetchTasks: () => Promise<void>;
+  removeTask: (data: string) => Promise<void>;
 }
 
 interface TasksProviderProps {
@@ -31,14 +32,27 @@ export function TasksProvider({ children }: TasksProviderProps) {
   const [tasks, setTasks] = useState<Task[]>([]);
 
   const fetchTasks = useCallback(async () => {
-    const response = await api.get('/todos', {
-      params: {
-        _sort: 'createAt',
-        _order: 'desc',
-      },
-    })
-    setTasks(response.data)
+    const response = await listTasks();
+    setTasks(response)
   }, [])
+
+  const addTask = useCallback (async (data: CreateTaskInput) => {
+    const {title, description} = data
+    const response = await createTask(title, description)
+
+    setTasks(state => [...state, response])
+  }, [])
+
+  const removeTask = async (taskIdWillBeDeleted: string) => {
+    // const taskWillBeDeleted = tasks.find((task) => {
+    //   task._id === taskIdWillBeDeleted 
+    // })
+    const taskWillBeDeleted = await deleteTask(taskIdWillBeDeleted)
+    const taskListWithoutTheDeletedOne = tasks.filter((task) => {
+      task !== taskWillBeDeleted
+    })
+    setTasks(taskListWithoutTheDeletedOne)
+  } 
 
   useEffect(() => {
     fetchTasks()
@@ -47,7 +61,9 @@ export function TasksProvider({ children }: TasksProviderProps) {
   return (<TasksContext.Provider
     value={{
       tasks,
-      fetchTasks
+      addTask,
+      fetchTasks,
+      removeTask
     }}>
       {children}
     </TasksContext.Provider>

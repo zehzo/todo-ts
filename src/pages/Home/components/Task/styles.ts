@@ -11,5 +11,7 @@ export const TaskContainer = styled.div`
   padding: 1rem;
   strong {
     padding: 0;
+    display: flex;
   }
+  margin: 10px;
 `

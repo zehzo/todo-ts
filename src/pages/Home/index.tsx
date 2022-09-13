@@ -13,8 +13,8 @@ export function Home(){
       <WrapperContainer>
         <Sidebar />
         <MainContainer>
-          <MainHeader />
           <TasksProvider>
+            <MainHeader />
             <TaskList/>
           </TasksProvider>
         </MainContainer>

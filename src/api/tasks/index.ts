@@ -19,7 +19,10 @@ export const createTask = async (
   title: string,
   description: string,
 ): Promise<Task> => {
-  const { data } = await api.post('/todos');
+  const { data } = await api.post('/todos', {
+    title,
+    description
+  });
 
   return data;
 }
