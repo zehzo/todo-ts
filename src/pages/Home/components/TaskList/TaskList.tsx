@@ -6,13 +6,13 @@ import { TaskListContainer } from './styles';
 
 export function TaskList() {
 
-  const { tasks } = useContext(TasksContext)
+  const { tasks, removeTask } = useContext(TasksContext)
 
   return (
     <TaskListContainer>
       {tasks.map((task) => {
         return (
-          <Task key={task._id} title={task.title} description={task.description} id={task._id}/>
+          <Task key={task._id} title={task.title} description={task.description} deleteTask={() => removeTask(task._id)} />
         );
       })}
     </TaskListContainer>

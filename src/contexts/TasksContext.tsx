@@ -17,9 +17,9 @@ interface CreateTaskInput {
 
 interface TasksContextType {
   tasks: Task[];
-  addTask: (data: CreateTaskInput) => void;
+  addTask: (data: CreateTaskInput) => Promise<void>;
   fetchTasks: () => Promise<void>;
-  removeTask: (data: string) => Promise<void>;
+  removeTask: (data: string) => void;
 }
 
 interface TasksProviderProps {
@@ -44,13 +44,12 @@ export function TasksProvider({ children }: TasksProviderProps) {
   }, [])
 
   const removeTask = async (taskIdWillBeDeleted: string) => {
-    // const taskWillBeDeleted = tasks.find((task) => {
-    //   task._id === taskIdWillBeDeleted 
-    // })
-    const taskWillBeDeleted = await deleteTask(taskIdWillBeDeleted)
-    const taskListWithoutTheDeletedOne = tasks.filter((task) => {
-      task !== taskWillBeDeleted
-    })
+    await deleteTask(taskIdWillBeDeleted)
+
+    const taskListWithoutTheDeletedOne = tasks.filter((task) =>
+      task._id !== taskIdWillBeDeleted
+    )
+    // console.log(taskListWithoutTheDeletedOne);
     setTasks(taskListWithoutTheDeletedOne)
   } 
 

@@ -12,6 +12,7 @@ export const AddButtonContainer = styled.div`
   }
 `;
 export const ModalContainer = styled(Modal)`
+
   .ant-modal {
   }
 
@@ -63,8 +64,8 @@ export const ModalContainer = styled(Modal)`
       border-radius: 5px;
     }
     .ant-form-item-explain-error {
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 0.7rem;
+      color: ${props => props.theme.pink};
+      font-size: 0.75rem;
       padding: 0.7rem;
     }
   }
@@ -110,11 +111,12 @@ export const ModalContainer = styled(Modal)`
   .ant-modal-close {
     color: ${(props) => props.theme.white};
   }
-
+  margin-top: 200px;
+/*   
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 `;
 
 export const FormContainer = styled(Form)`

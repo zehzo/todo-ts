@@ -1,23 +1,19 @@
-import { useContext } from "use-context-selector";
-import { TasksContext } from "../../../../contexts/TasksContext";
 import { TaskContainer } from "./styles";
 
 interface TaskProps {
-  id: string;
   title: string;
   description: string;
+  deleteTask: () => void;
 }
 
-export function Task({title, description, id}: TaskProps) {
-  const { removeTask } = useContext(TasksContext)
-  
+export function Task({title, description, deleteTask}: TaskProps) {
   return (
     <TaskContainer>
       <div>
         <strong>{title}</strong>
         <span>{description}</span>
       </div>
-      <button onClick={() => removeTask(id)}>Remover</button>
+      <button onClick={deleteTask}>Remove</button>
     </TaskContainer>
   );
 }

@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
 export const TaskListContainer = styled.div`
-  padding: 30px;
+  padding: 0 30px 30px 30px;
   overflow-y: scroll;
-  height: 600px;
+  height: 32rem;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `

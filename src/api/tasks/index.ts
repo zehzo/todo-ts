@@ -28,7 +28,7 @@ export const createTask = async (
 }
 
 export const detailTask = async (taskId: string) => {
-  const { data } = await api.get(`/todos/:${taskId}`);
+  const { data } = await api.get(`/todos/${taskId}`);
 
   return data;
 }
@@ -39,13 +39,13 @@ export const updateTask = async (
   description: string; 
   }
 ): Promise<Task> => {
-  const { data } = await api.put(`/todos/:${taskId}`, taskInfo);
+  const { data } = await api.put(`/todos/${taskId}`, taskInfo);
 
   return data;
 }
 
 export const deleteTask = async (taskId: string) => {
-  const { data } = await api.delete(`/todos/:${taskId}`)
+  const { data } = await api.delete(`/todos/${taskId}`)
 
   return data;
 }

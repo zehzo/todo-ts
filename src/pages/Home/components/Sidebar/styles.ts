@@ -4,7 +4,7 @@ export const SidebarContainer = styled.aside`
   background: ${props => props.theme["gray-600"]};
   padding-top: 29px;
   padding-left: 30px;
-  height: 70vh;
+  height: 93vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
