@@ -25,5 +25,9 @@ export const MainContainer = styled.main`
   background-color: ${props => props.theme["gray-700"]};
   padding: 30px;
   border-radius: 0 0 4px 0;
+  @media (max-width: 768px){
+    background-color: ${props => props.theme["gray-700"]};
+    height: 100vh;
+  }
 `
 

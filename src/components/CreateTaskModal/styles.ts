@@ -6,6 +6,12 @@ export const AddButtonContainer = styled.div`
     border: 0;
     cursor: pointer;
     transition: filter 0.3s;
+    @media (max-width: 768px){
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+      }
+
     img {
       background-color: ${(props) => props.theme['gray-700']};
       box-shadow: none;
@@ -26,17 +32,18 @@ export const ModalContainer = styled(Modal)`
     padding: 32px 40px;
     border-radius: 5px;
   }
+
   .ant-modal-header {
     .ant-modal-title {
       color: ${(props) => props.theme.pink};
       font-family: 'Roboto', sans-serif;
       font-size: 1.25rem;
     }
-
     border: none;
     padding: 0;
     background: ${(props) => props.theme['gray-700']};
   }
+
   .ant-modal-body {
     padding: 24px 0 0 0;
 
@@ -49,7 +56,6 @@ export const ModalContainer = styled(Modal)`
       > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
       display: none;
     }
-
 
     #form_in_modal_title {
       background: linear-gradient(0deg, #1e1e26, #1e1e26),
@@ -116,11 +122,6 @@ export const ModalContainer = styled(Modal)`
   .ant-modal-close {
     color: ${(props) => props.theme.white};
   }
-/*   
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
 `;
 
 export const FormContainer = styled(Form)`
