@@ -5,15 +5,20 @@ export const AddButtonContainer = styled.div`
   button {
     border: 0;
     cursor: pointer;
+    transition: filter 0.3s;
     img {
       background-color: ${(props) => props.theme['gray-700']};
       box-shadow: none;
     }
   }
+  button:hover {
+    filter: brightness(1.3) 
+  }
 `;
 export const ModalContainer = styled(Modal)`
 
   .ant-modal {
+
   }
 
   .ant-modal-content {
@@ -111,7 +116,6 @@ export const ModalContainer = styled(Modal)`
   .ant-modal-close {
     color: ${(props) => props.theme.white};
   }
-  margin-top: 200px;
 /*   
   position: fixed;
   top: 50%;

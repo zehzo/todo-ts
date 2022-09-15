@@ -4,7 +4,7 @@ export const SidebarContainer = styled.aside`
   background: ${props => props.theme["gray-600"]};
   padding-top: 29px;
   padding-left: 30px;
-  height: 93vh;
+  height: 92vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,6 +12,7 @@ export const SidebarContainer = styled.aside`
 
   footer {
   padding-bottom: 40px;
+  gap: 1.2rem;
   display: flex;
   align-items: center;
   }
@@ -39,7 +40,7 @@ export const GreetingsContainer = styled.div`
 `
 
 export const ContentContainer = styled.div` 
-  padding-left: 10px;
+  /* padding-left: 10px; */
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

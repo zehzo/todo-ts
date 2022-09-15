@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const HomeContainer = styled.main`
-  /* max-width: 99.16rem;
-  margin: 0vh 30vh ; */
   border-radius: 10px;
   background-color: ${props => props.theme["gray-600"]};
   display: flex;
@@ -18,7 +16,6 @@ export const WrapperContainer = styled.div`
   color: ${props => props.theme.white};
   @media (max-width: 768px){
     grid-template-columns: 1fr;
-    background-color: #FBF;
   }
 `
 

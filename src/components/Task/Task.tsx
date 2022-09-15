@@ -1,4 +1,5 @@
 import { TaskContainer } from "./styles";
+import removeButton from '../../assets/delete_button.svg'
 
 interface TaskProps {
   title: string;
@@ -13,7 +14,9 @@ export function Task({title, description, deleteTask}: TaskProps) {
         <strong>{title}</strong>
         <span>{description}</span>
       </div>
-      <button onClick={deleteTask}>Remove</button>
+      <button onClick={deleteTask}>
+        <img src={removeButton} />
+      </button>
     </TaskContainer>
   );
 }

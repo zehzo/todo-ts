@@ -9,6 +9,9 @@ export const TaskContainer = styled.div`
   height: 4.5rem;
   background-color: ${props => props.theme["gray-500"]};
   padding: 1rem;
+
+  margin: 10px;
+  border-left: 3px solid ${props => props.theme.pink};
   strong {
     padding: 0;
     display: flex;
@@ -20,7 +23,21 @@ export const TaskContainer = styled.div`
     font-size: 0.85714rem;
     font-weight: 400;
   }
-  margin: 10px;
 
-  border-left: 3px solid ${props => props.theme.pink}
+  button {
+    border: none;
+    background-color: ${props => props.theme["gray-500"]};
+
+  }
+
+  button :hover {
+    cursor: pointer;
+    filter: brightness(1.2)
+  }
+
+  button img {
+    background-color: ${props => props.theme["gray-500"]};
+    align-items: center;
+  }
+  
 `

@@ -1,5 +1,5 @@
 import { Task } from '../Task/Task';
-import { TasksContext } from '../../../../contexts/TasksContext';
+import { TasksContext } from '../../contexts/TasksContext';
 import { useContext } from 'react';
 import { TaskListContainer } from './styles';
 

@@ -1,8 +1,8 @@
 import { Form, Input } from 'antd';
-import React, { useCallback, useContext, useState } from 'react';
-import '../../../../../node_modules/antd/dist/antd.css';
-import addButton from '../../../../assets/add_button.svg';
-import { TasksContext } from '../../../../contexts/TasksContext';
+import React, { useContext, useState } from 'react';
+import '../../../node_modules/antd/dist/antd.css';
+import addButton from '../../assets/add_button.svg';
+import { TasksContext } from '../../contexts/TasksContext';
 import { AddButtonContainer, FormContainer, ModalContainer } from './styles';
 
 interface Task {
@@ -29,6 +29,7 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
       okText="Adicionar"
       cancelText="Cancelar"
       onCancel={onCancel}
+      centered={true}
       onOk={() => {
         form
           .validateFields()
@@ -74,9 +75,9 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
 const CreateTaskModal: React.FC = () => {
   const [open, setOpen] = useState(false);
   
-  const { tasks, addTask } = useContext(TasksContext)
+  const { addTask } = useContext(TasksContext)
   
-  const onCreate = (values: any) => {
+  const onCreate = (values: Task) => {
     console.log('Received values of form: ', values);
     const { title, description } = values
     addTask({ title, description })
