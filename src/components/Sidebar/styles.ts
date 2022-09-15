@@ -3,13 +3,14 @@ import styled from "styled-components";
 export const SidebarContainer = styled.aside`
   background: ${props => props.theme["gray-600"]};
   padding: 30px;
-  height: 89%;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 0 0 0 4px;
   @media (max-width: 768px){
     padding: 0px;
+    height: 100%;
   }
 
   footer {
