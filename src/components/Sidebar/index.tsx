@@ -1,6 +1,10 @@
 import profile from '../../assets/profile.svg';
 import mediumLogo from '../../assets/medium_logo.svg';
-import { ContentContainer, GreetingsContainer, SidebarContainer } from './styles';
+import {
+  ContentContainer,
+  GreetingsContainer,
+  SidebarContainer,
+} from './styles';
 
 export function Sidebar() {
   return (

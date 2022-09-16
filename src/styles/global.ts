@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${props => props.theme["gray-500"]};
+    background: ${(props) => props.theme['gray-500']};
     -webkit-font-smoothing: antialiased;
     
   
@@ -20,4 +20,4 @@ export const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     
   } 
-`
+`;

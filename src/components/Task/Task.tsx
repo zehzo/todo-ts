@@ -1,5 +1,5 @@
-import { TaskContainer } from "./styles";
-import removeButton from '../../assets/delete_button.svg'
+import { TaskContainer } from './styles';
+import removeButton from '../../assets/delete_button.svg';
 
 interface TaskProps {
   title: string;
@@ -7,7 +7,7 @@ interface TaskProps {
   deleteTask: () => void;
 }
 
-export function Task({title, description, deleteTask}: TaskProps) {
+export function Task({ title, description, deleteTask }: TaskProps) {
   return (
     <TaskContainer>
       <div>

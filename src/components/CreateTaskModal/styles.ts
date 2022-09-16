@@ -6,11 +6,11 @@ export const AddButtonContainer = styled.div`
     border: 0;
     cursor: pointer;
     transition: filter 0.3s;
-    @media (max-width: 768px){
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-      }
+    @media (max-width: 768px) {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+    }
 
     img {
       background-color: ${(props) => props.theme['gray-700']};
@@ -18,13 +18,11 @@ export const AddButtonContainer = styled.div`
     }
   }
   button:hover {
-    filter: brightness(1.3) 
+    filter: brightness(1.3);
   }
 `;
 export const ModalContainer = styled(Modal)`
-
   .ant-modal {
-
   }
 
   .ant-modal-content {
@@ -59,30 +57,31 @@ export const ModalContainer = styled(Modal)`
 
     #form_in_modal_title {
       background: linear-gradient(0deg, #1e1e26, #1e1e26),
-        linear-gradient(249.73deg, #f29682 0%, #ee69ac 50%,#cb4bcf 100%);
+        linear-gradient(249.73deg, #f29682 0%, #ee69ac 50%, #cb4bcf 100%);
       border: none;
       border-radius: 5px;
     }
 
     .ant-input {
       color: white;
-    }    
+    }
 
     #form_in_modal_description {
       background: linear-gradient(0deg, #1e1e26, #1e1e26),
         linear-gradient(249.73deg, #f29682 0%, #ee69ac 50%, #cb4bcf 100%);
-      border: none;
       border-radius: 5px;
+      border-style: none;
+      height: 6rem;
     }
     .ant-form-item-explain-error {
-      color: ${props => props.theme.pink};
+      color: ${(props) => props.theme.pink};
       font-size: 0.75rem;
       padding: 0.7rem;
     }
   }
 
   .ant-modal-footer {
-    .ant-btn + .ant-btn:not(.ant-dropdown-trigger){
+    .ant-btn + .ant-btn:not(.ant-dropdown-trigger) {
       margin-left: 0;
     }
     border: none;
@@ -103,7 +102,6 @@ export const ModalContainer = styled(Modal)`
       touch-action: manipulation;
       height: 2.25rem;
       width: 100vh;
-
       font-size: 1.125rem;
       color: ${(props) => props.theme.white};
       background: linear-gradient(
@@ -112,6 +110,9 @@ export const ModalContainer = styled(Modal)`
         #ee69ac 50%,
         #cb4bcf 100%
       );
+      :hover {
+        filter: brightness(1.2);
+      }
     }
 
     .ant-btn-default {
@@ -124,6 +125,4 @@ export const ModalContainer = styled(Modal)`
   }
 `;
 
-export const FormContainer = styled(Form)`
-  /* background: ${(props) => props.theme['gray-700']}; */
-`;
+export const FormContainer = styled(Form)``;

@@ -1,12 +1,12 @@
-import { Header } from '../../components/Header'
-import { Sidebar } from '../../components/Sidebar'
+import { Header } from '../../components/Header';
+import { Sidebar } from '../../components/Sidebar';
 import { MainHeader } from '../../components/MainHeader';
 
-import { HomeContainer, MainContainer, WrapperContainer } from "./styles";
+import { HomeContainer, MainContainer, WrapperContainer } from './styles';
 import { TaskList } from '../../components/TaskList/TaskList';
 import { TasksProvider } from '../../contexts/TasksContext';
 
-export function Home(){
+export function Home() {
   return (
     <HomeContainer>
       <Header />
@@ -15,7 +15,7 @@ export function Home(){
         <MainContainer>
           <TasksProvider>
             <MainHeader />
-            <TaskList/>
+            <TaskList />
           </TasksProvider>
         </MainContainer>
       </WrapperContainer>
